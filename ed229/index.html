@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Video Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Educational Video Generator</h1>
+            <p>Create engaging 1-minute educational videos from any topic using AI</p>
+        </header>
+        
+        <main>
+            <form id="videoForm" action="/generate" method="POST">
+                <div class="form-group">
+                    <label for="topic">Enter your educational topic:</label>
+                    <input 
+                        type="text" 
+                        id="topic" 
+                        name="topic" 
+                        placeholder="e.g., The Water Cycle, Photosynthesis, Solar System..."
+                        required
+                    >
+                </div>
+                
+                <button type="submit" id="generateBtn">
+                    <span class="btn-text">Generate Video</span>
+                    <span class="btn-loading" style="display: none;">Generating...</span>
+                </button>
+            </form>
+            
+            <div id="status" class="status hidden">
+                <div class="status-content">
+                    <div class="spinner"></div>
+                    <p id="statusText">Processing your request...</p>
+                </div>
+            </div>
+            
+            <div id="result" class="result hidden">
+                <h3>Your video is ready!</h3>
+                <div id="scriptBox" class="script-box" style="display:none; margin-bottom:12px;"></div>
+                <video id="videoPlayer" controls style="width: 100%; max-width: 600px;">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="download-section">
+                    <a id="downloadLink" href="#" download="educational_video.mp4" class="download-btn">
+                        📥 Download Video
+                    </a>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Powered by Mistral AI, Hugging Face, and MoviePy</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.getElementById('videoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const status = document.getElementById('status');
+            const result = document.getElementById('result');
+            const generateBtn = document.getElementById('generateBtn');
+            const btnText = document.querySelector('.btn-text');
+            const btnLoading = document.querySelector('.btn-loading');
+            
+            // Show loading state
+            status.classList.remove('hidden');
+            result.classList.add('hidden');
+            generateBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            
+            // Create FormData and submit
+            const formData = new FormData(form);
+            
+            fetch('/generate', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Check if response is JSON (error) or blob (video)
+                    const contentType = response.headers.get('content-type');
+                    if (contentType && contentType.includes('application/json')) {
+                        return response.json().then(err => Promise.reject(err));
+                    }
+                    return response.blob();
+                }
+                return response.json().then(err => Promise.reject(err));
+            })
+            .then(blob => {
+                // Create video URL and show result
+                const videoUrl = URL.createObjectURL(blob);
+                const videoPlayer = document.getElementById('videoPlayer');
+                const downloadLink = document.getElementById('downloadLink');
+                const scriptBox = document.getElementById('scriptBox');
+                
+                videoPlayer.src = videoUrl;
+                downloadLink.href = videoUrl;
+                downloadLink.download = `educational_video_${document.getElementById('topic').value.replace(/\s+/g, '_')}.mp4`;
+                // Fetch script preview
+                fetch(`/test-script/${encodeURIComponent(document.getElementById('topic').value)}`)
+                    .then(r => r.json())
+                    .then(data => {
+                        if (data && data.script && data.script.scenes) {
+                            const html = data.script.scenes.map((s, i) => {
+                                const desc = (s.description || '').replace(/</g,'&lt;');
+                                const nar = (s.narration || '').replace(/</g,'&lt;');
+                                return `<div style="margin-bottom:8px;"><strong>Scene ${i+1}</strong><br><em>${desc}</em><br>${nar}</div>`;
+                            }).join('');
+                            scriptBox.style.display = 'block';
+                            scriptBox.innerHTML = `<strong>Script:</strong><br>${html}`;
+                        }
+                    })
+                    .catch(() => { /* ignore */ });
+                
+                status.classList.add('hidden');
+                result.classList.remove('hidden');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                const msg = (error && (error.error || error.message)) ? (error.error || error.message) : (typeof error === 'string' ? error : 'Unknown error');
+                document.getElementById('statusText').textContent = 'Error: ' + msg;
+            })
+            .finally(() => {
+                // Reset button state
+                generateBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
