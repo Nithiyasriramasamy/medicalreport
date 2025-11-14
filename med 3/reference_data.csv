@@ -1,0 +1,140 @@
+Test_Name,Min_Value,Max_Value,Unit,Description
+Hemoglobin,12.0,16.0,g/dL,Oxygen-carrying protein in red blood cells
+WBC,4000,11000,/µL,White blood cells - immune system defense
+RBC,4.5,5.5,million/µL,Red blood cells - oxygen transport
+Platelets,150000,400000,/µL,Blood clotting cells
+Neutrophils,40,70,%,Type of white blood cell
+Lymphocytes,20,40,%,Type of white blood cell
+Glucose,70,100,mg/dL,Fasting blood sugar level
+Cholesterol,125,200,mg/dL,Total cholesterol
+HDL,40,60,mg/dL,Good cholesterol
+LDL,0,100,mg/dL,Bad cholesterol
+Triglycerides,0,150,mg/dL,Blood fat levels
+Creatinine,0.7,1.3,mg/dL,Kidney function marker
+Urea,15,40,mg/dL,Kidney function marker
+ALT,7,56,U/L,Liver enzyme
+AST,10,40,U/L,Liver enzyme
+TSH,0.4,4.0,mIU/L,Thyroid stimulating hormone
+Hematocrit,36,50,%,Percentage of blood volume occupied by RBCs
+MCV,80,100,fL,Average red blood cell size
+MCH,27,32,pg,Average hemoglobin per red blood cell
+MCHC,32,36,g/dL,Average hemoglobin concentration
+Urine_pH,4.5,8.0,pH,Acidity or alkalinity of urine
+Urine_Specific_Gravity,1.005,1.030,SG,Concentration of urine
+Urine_Protein,0,0,mg/dL,Protein in urine (should be negative)
+Urine_Glucose,0,0,mg/dL,Glucose in urine (should be negative)
+Urine_Ketones,0,0,mg/dL,Ketones in urine (should be negative)
+Urine_Blood,0,0,cells/hpf,Blood cells in urine (should be negative)
+Urine_Bilirubin,0,0,mg/dL,Bilirubin in urine (should be negative)
+Urine_Urobilinogen,0.1,1.0,mg/dL,Urobilinogen in urine
+Urine_Nitrite,0,0,Negative,Bacteria indicator (should be negative)
+Urine_Leukocyte_Esterase,0,0,Negative,White blood cells in urine (should be negative)
+Urine_WBC,0,5,cells/hpf,White blood cells in urine
+Urine_RBC,0,3,cells/hpf,Red blood cells in urine
+Urine_Epithelial_Cells,0,5,cells/hpf,Epithelial cells in urine
+Urine_Bacteria,0,0,Negative,Bacteria in urine (should be negative)
+Urine_Crystals,0,0,Negative,Crystals in urine (should be negative)
+Urine_Casts,0,0,casts/lpf,Casts in urine (should be negative)
+BUN,7,20,mg/dL,Blood Urea Nitrogen - kidney function
+Sodium,136,145,mEq/L,Electrolyte balance and hydration
+Potassium,3.5,5.0,mEq/L,Electrolyte for heart and muscle function
+Chloride,96,106,mEq/L,Electrolyte balance
+Calcium,8.5,10.5,mg/dL,Bone health and muscle function
+Magnesium,1.7,2.2,mg/dL,Muscle and nerve function
+Phosphorus,2.5,4.5,mg/dL,Bone health and energy production
+Albumin,3.5,5.5,g/dL,Protein made by liver
+Total_Protein,6.0,8.3,g/dL,Total protein in blood
+Globulin,2.0,3.5,g/dL,Immune system proteins
+A_G_Ratio,1.0,2.5,ratio,Albumin to Globulin ratio
+Alkaline_Phosphatase,30,120,U/L,Liver and bone enzyme
+GGT,0,51,U/L,Liver enzyme - alcohol marker
+Total_Bilirubin,0.1,1.2,mg/dL,Liver function and RBC breakdown
+Direct_Bilirubin,0.0,0.3,mg/dL,Conjugated bilirubin
+Indirect_Bilirubin,0.1,1.0,mg/dL,Unconjugated bilirubin
+LDH,140,280,U/L,Tissue damage marker
+CPK,30,200,U/L,Muscle damage marker
+Amylase,30,110,U/L,Pancreatic enzyme
+Lipase,0,160,U/L,Pancreatic enzyme
+HbA1c,4.0,5.6,%,3-month average blood sugar
+Fasting_Insulin,2.6,24.9,µIU/mL,Insulin resistance marker
+C_Peptide,0.8,3.1,ng/mL,Insulin production marker
+VLDL,5,40,mg/dL,Very low density lipoprotein
+Non_HDL_Cholesterol,0,130,mg/dL,Total cholesterol minus HDL
+Cholesterol_HDL_Ratio,0,5.0,ratio,Heart disease risk ratio
+LDL_HDL_Ratio,0,3.5,ratio,Cardiovascular risk ratio
+Apolipoprotein_A1,100,200,mg/dL,HDL protein component
+Apolipoprotein_B,40,125,mg/dL,LDL protein component
+Lipoprotein_a,0,30,mg/dL,Genetic heart disease risk factor
+T3,80,200,ng/dL,Triiodothyronine - active thyroid hormone
+T4,4.5,12.0,µg/dL,Thyroxine - thyroid hormone
+Free_T3,2.3,4.2,pg/mL,Free triiodothyronine
+Free_T4,0.8,1.8,ng/dL,Free thyroxine
+Reverse_T3,9.2,24.1,ng/dL,Inactive thyroid hormone
+Thyroid_Antibodies,0,34,IU/mL,Autoimmune thyroid marker
+Vitamin_D,30,100,ng/mL,Bone health and immunity
+Vitamin_B12,200,900,pg/mL,Nerve function and RBC production
+Folate,2.7,17.0,ng/mL,Cell growth and RBC production
+Iron,60,170,µg/dL,Oxygen transport mineral
+TIBC,250,450,µg/dL,Total iron binding capacity
+Ferritin,12,300,ng/mL,Iron storage protein
+Transferrin_Saturation,20,50,%,Iron availability
+Serum_Iron,50,170,µg/dL,Iron in blood
+Zinc,70,120,µg/dL,Immune function and wound healing
+Copper,70,140,µg/dL,Iron metabolism and nerve function
+Selenium,70,150,µg/L,Antioxidant mineral
+Cortisol,6,23,µg/dL,Stress hormone
+Testosterone_Total,300,1000,ng/dL,Male hormone (men)
+Testosterone_Free,5,21,pg/mL,Bioavailable testosterone
+Estradiol,15,350,pg/mL,Female hormone
+Progesterone,0.2,25,ng/mL,Female hormone
+FSH,1.5,12.4,mIU/mL,Follicle stimulating hormone
+LH,1.7,8.6,mIU/mL,Luteinizing hormone
+Prolactin,4,15,ng/mL,Milk production hormone
+DHEA_S,35,430,µg/dL,Adrenal hormone
+Growth_Hormone,0,10,ng/mL,Growth and metabolism hormone
+IGF_1,115,307,ng/mL,Growth factor
+PSA,0,4.0,ng/mL,Prostate specific antigen (men)
+CEA,0,3.0,ng/mL,Cancer marker
+CA_125,0,35,U/mL,Ovarian cancer marker
+CA_19_9,0,37,U/mL,Pancreatic cancer marker
+AFP,0,10,ng/mL,Liver cancer marker
+CRP,0,3.0,mg/L,Inflammation marker
+ESR,0,20,mm/hr,Erythrocyte sedimentation rate
+Homocysteine,5,15,µmol/L,Heart disease risk marker
+Uric_Acid,3.5,7.2,mg/dL,Gout and kidney stone marker
+Prothrombin_Time,11,13.5,seconds,Blood clotting time
+INR,0.8,1.1,ratio,International normalized ratio
+APTT,25,35,seconds,Activated partial thromboplastin time
+D_Dimer,0,500,ng/mL,Blood clot marker
+Fibrinogen,200,400,mg/dL,Clotting protein
+Monocytes,2,8,%,Type of white blood cell
+Eosinophils,1,4,%,Type of white blood cell
+Basophils,0,1,%,Type of white blood cell
+Absolute_Neutrophils,1500,8000,cells/µL,Absolute neutrophil count
+Absolute_Lymphocytes,1000,4800,cells/µL,Absolute lymphocyte count
+Absolute_Monocytes,200,1000,cells/µL,Absolute monocyte count
+Absolute_Eosinophils,15,500,cells/µL,Absolute eosinophil count
+Absolute_Basophils,0,200,cells/µL,Absolute basophil count
+RDW,11.5,14.5,%,Red cell distribution width
+MPV,7.5,11.5,fL,Mean platelet volume
+Platelet_Distribution_Width,10,18,%,Platelet size variation
+Reticulocyte_Count,0.5,2.5,%,Immature red blood cells
+Osmolality,275,295,mOsm/kg,Blood concentration
+Anion_Gap,8,16,mEq/L,Electrolyte balance
+CO2,23,29,mEq/L,Carbon dioxide in blood
+Lactate,0.5,2.2,mmol/L,Lactic acid - tissue oxygenation
+Ammonia,15,45,µg/dL,Liver function marker
+Troponin,0,0.04,ng/mL,Heart attack marker
+BNP,0,100,pg/mL,Heart failure marker
+NT_proBNP,0,125,pg/mL,Heart failure marker
+Myoglobin,0,85,ng/mL,Muscle damage marker
+CK_MB,0,5,ng/mL,Heart muscle damage marker
+Vitamin_A,20,80,µg/dL,Vision and immune function
+Vitamin_E,5.5,17,mg/L,Antioxidant vitamin
+Vitamin_K,0.2,3.2,ng/mL,Blood clotting vitamin
+Vitamin_C,0.4,2.0,mg/dL,Antioxidant vitamin
+Omega_3_Index,4,12,%,Heart health marker
+Lead,0,10,µg/dL,Heavy metal toxicity
+Mercury,0,10,µg/L,Heavy metal toxicity
+Cadmium,0,5,µg/L,Heavy metal toxicity
+Arsenic,0,50,µg/L,Heavy metal toxicity
